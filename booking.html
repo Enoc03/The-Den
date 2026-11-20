@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session | The Den</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="The Den Logo">
+        </a>
+
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#training">Training</a>
+            <a href="index.html#about">About</a>
+            <a href="booking.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+
+
+        <!-- Booking Introduction -->
+        <div class="booking-heading">
+
+            <p class="section-label">GET IN TOUCH</p>
+
+            <h1>STEP INTO<br><span>THE DEN.</span></h1>
+
+            <p>
+                Interested in training at The Den?
+                Complete the enquiry form and
+                let us know what you're interested in.
+            </p>
+
+            <p>
+                We'll get in touch with you
+                regarding your enquiry and
+                available training options.
+            </p>
+
+        </div>
+
+
+        <!-- Booking Form -->
+        <div class="booking-form-container">
+
+            <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID"
+                  method="POST">
+
+
+                <!-- First Name and Last Name -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="firstName">First Name</label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="First Name"
+                            placeholder="Enter your first name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">Last Name</label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="Last Name"
+                            placeholder="Enter your last name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="Email"
+                        placeholder="Enter your email address"
+                        required>
+
+                </div>
+
+
+                <!-- Phone -->
+                <div class="form-group">
+
+                    <label for="phone">Contact Number</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="Contact Number"
+                        placeholder="Enter your contact number"
+                        required>
+
+                </div>
+
+
+                <!-- Training Interest -->
+                <div class="form-group">
+
+                    <label for="interest">
+                        What are you interested in?
+                    </label>
+
+                    <select id="interest"
+                            name="Training Interest"
+                            required>
+
+                        <option value="">Select an option</option>
+
+                        <option value="Muay Thai">
+                            Muay Thai
+                        </option>
+
+                        <option value="Kickboxing">
+                            Kickboxing
+                        </option>
+
+                        <option value="Personal Training">
+                            Personal Training
+                        </option>
+
+                        <option value="General Enquiry">
+                            General Enquiry
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Contact Preference -->
+                <div class="form-group">
+
+                    <label for="contactMethod">
+                        Preferred Contact Method
+                    </label>
+
+                    <select
+                        id="contactMethod"
+                        name="Preferred Contact Method"
+                        required>
+
+                        <option value="">
+                            Choose a contact method
+                        </option>
+
+                        <option value="Email">
+                            Email
+                        </option>
+
+                        <option value="Phone Call">
+                            Phone Call
+                        </option>
+
+                        <option value="WhatsApp">
+                            WhatsApp
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Message -->
+                <div class="form-group">
+
+                    <label for="message">
+                        Additional Information (Optional)
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="Message"
+                        rows="5"
+                        placeholder="Tell us a little more about your enquiry...">
+                    </textarea>
+
+                </div>
+
+
+                <!-- Submit Button -->
+                <button type="submit" class="form-button">
+                    Submit Enquiry
+                </button>
+
+
+                <p class="form-note">
+                    Submit your details and The Den
+                    will get in touch regarding your enquiry.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>THE DEN</p>
+
+        <p>
+            &copy; 2026 The Den. All rights reserved.
+        </p>
+
+        <a href="index.html">Back to Home</a>
+
+    </footer>
+
+
+    <!-- Automatically select the training interest -->
+    <script>
+
+        // Get the interest from the URL
+        const params = new URLSearchParams(window.location.search);
+
+        const interest = params.get("interest");
+
+        // Find the dropdown
+        const interestSelect = document.getElementById("interest");
+
+        // Select the relevant training option
+        if (interest && interestSelect) {
+
+            for (let i = 0; i < interestSelect.options.length; i++) {
+
+                if (interestSelect.options[i].value === interest) {
+
+                    interestSelect.selectedIndex = i;
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
