@@ -1,4 +1,4 @@
-# 🥊 The Den – Combat Sports & Training Website
+# The Den – Combat Sports & Training Website
 
 ## About the Project
 
