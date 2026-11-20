@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # The Den – Combat Sports & Training Website
+=======
+#  The Den – Combat Sports & Training Website
+>>>>>>> dee93c3cb0644ffc3d34e764fca1c6ff7bbba929
 
 ## About the Project
 
